@@ -6,8 +6,21 @@ import {
   Group,
 } from '@mantine/core';
 import { GoogleButton } from '@/components/Button/GoogleeButton';
+import { UserAuth } from '@/firebase/context/AuthContext';
 
 export default function LoginPage() {
+  const { user, googleSignIn } = UserAuth();
+
+  const handleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(user);
+
   return (
     <Box style={{
       width: '50%',
@@ -19,7 +32,7 @@ export default function LoginPage() {
       </Text>
 
       <Group grow mb="md" mt="md">
-        <GoogleButton size="sm" radius="xl">Google</GoogleButton>
+        <GoogleButton onClick={handleSignIn} size="sm" radius="xl">Google</GoogleButton>
       </Group>
     </Box>
   );

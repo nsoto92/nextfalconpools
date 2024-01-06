@@ -2,6 +2,7 @@ import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
+import { AuthContextProvider } from '@/firebase/context/AuthContext';
 
 export const metadata = {
   title: 'Falcón Pools Puerto Rico | Construcción y Remodelación de Piscinas',
@@ -20,7 +21,11 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <AuthContextProvider>
+          <MantineProvider theme={theme}>
+            {children}
+          </MantineProvider>
+        </AuthContextProvider>
       </body>
     </html>
   );
