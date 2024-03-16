@@ -1,4 +1,4 @@
-import { Container, Title, Text } from '@mantine/core';
+import { Button, Container, Title, Text } from '@mantine/core';
 import styles from './HomeHero.module.css';
 
 export function HomeHero() {
@@ -22,7 +22,7 @@ export function HomeHero() {
                 component="span"
                 inherit
                 variant="gradient"
-                gradient={{ from: 'pink', to: 'yellow' }}
+                gradient={{ from: 'pink', to: 'orange' }}
               >
                 remodelación
               </Text>{' '}
@@ -35,6 +35,18 @@ export function HomeHero() {
               piscina personalizada, renovaciones refrescantes o reparaciones confiables, somos
               tu compañía de piscinas de confianza.
             </Text>
+            <Button
+              component="a"
+              variant="gradient"
+              gradient={{ from: 'pink', to: 'orange' }}
+              size="md"
+              className={styles.control}
+              mt={40}
+              href="https://falconpoolsprhablaclaro.as.me/schedule/9586f425"
+              target="_blank"
+            >
+              Citas Aquí
+            </Button>
           </div>
         </div>
       </Container>
