@@ -26,6 +26,10 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
+  robots: {
+    userAgent: '*',
+    disallow: '',
+  },
   author: 'Norbert Soto',
 };
 
