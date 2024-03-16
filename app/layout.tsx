@@ -14,6 +14,7 @@ export const metadata = {
   icons: {
     icon: '/favicon.ico',
   },
+  metadataBase: new URL('https://falconpoolspr.com'),
   openGraph: {
     title: 'Falcón Pools Puerto Rico | Construcción y Remodelación de Piscinas',
     description: 'Transforma tu oasis en el patio trasero con nuestros servicios expertos de construcción y remodelación de piscinas. En Falcon Pools Puerto Rico, nos especializamos en crear impresionantes piscinas a medida según tu visión única. Desde el diseño hasta la instalación, nuestro equipo capacitado aporta años de experiencia y un compromiso con la excelencia. Ya sea que sueñes con una lujosa piscina personalizada, renovaciones refrescantes o reparaciones confiables, somos tu compañía de piscinas de confianza. Sumérgete en un mundo de posibilidades infinitas y haz una gran impresión con nuestras soluciones de piscinas de primera categoría. ¡Contáctanos hoy mismo para una consulta!',
