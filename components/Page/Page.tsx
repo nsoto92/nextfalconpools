@@ -1,4 +1,4 @@
-import { Header } from '@/components/Header/Header';
+import { Navbar } from '@/components/Navbar/Navbar';
 import { Footer } from '@/components/Footer/Footer';
 
 interface PageProps {
@@ -7,7 +7,7 @@ interface PageProps {
 export default function Page({ children }: PageProps) {
   return (
     <>
-      <Header />
+      <Navbar />
       {children}
       <Footer />
     </>

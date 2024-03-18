@@ -25,7 +25,7 @@ import {
   IconDroplet,
   IconCurrencyDollar,
 } from '@tabler/icons-react';
-import styles from './Header.module.css';
+import styles from './Navbar.module.css';
 
 const mockdata = [
   {
@@ -45,7 +45,7 @@ const mockdata = [
   },
 ];
 
-export function Header() {
+export function Navbar() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const theme = useMantineTheme();
