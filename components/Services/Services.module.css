@@ -20,7 +20,21 @@
 .description {
   text-align: center;
   width: 100%;
+  margin-bottom: var(--mantine-spacing-sm);
   @media (max-width: $mantine-breakpoint-sm) {
-    text-align: left;
+    text-align: center;
   }
+}
+
+.serviceTitle {
+  @media (max-width: $mantine-breakpoint-sm) {
+      display: flex;
+      flex-direction: row;
+    }
+}
+
+.serviceIcon {
+  @media (max-width: $mantine-breakpoint-sm) {
+      margin-right: 15px;
+    }
 }
