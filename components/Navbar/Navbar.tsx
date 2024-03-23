@@ -27,8 +27,8 @@ import {
   IconBrandTwitter,
   IconBrandYoutube,
   IconChevronDown,
-  IconDroplet,
-  IconSalt,
+  // IconDroplet,
+  // IconSalt,
 } from '@tabler/icons-react';
 import styles from './Navbar.module.css';
 import { GallonCalculator } from '../Calculators/GallonCalculator';
@@ -37,28 +37,28 @@ export function Navbar() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   // const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const [socialLinksOpened, { toggle: toggleSocialLinks }] = useDisclosure(false);
-  const [gallonCalcOpened, { open: openGallonCalc, close: closeGallonCalc }] = useDisclosure(false);
+  const [gallonCalcOpened, { close: closeGallonCalc }] = useDisclosure(false);
   const theme = useMantineTheme();
 
-  const CalculatorData = [
-    {
-      icon: IconDroplet,
-      title: 'Calculadora de Galones',
-      onClick: openGallonCalc,
-      description: 'Calcula galones para piscinas rectangulares, circulares e irregulares',
-    },
-    {
-      icon: IconSalt,
-      title: 'Calculadora de Sal',
-      description: 'Calcula la cantidad de sal que necesitas para tu piscina de agua salada',
-    },
+  // const CalculatorData = [
+  //   {
+  //     icon: IconDroplet,
+  //     title: 'Calculadora de Galones',
+  //     onClick: openGallonCalc,
+  //     description: 'Calcula galones para piscinas rectangulares, circulares e irregulares',
+  //   },
+  //   {
+  //     icon: IconSalt,
+  //     title: 'Calculadora de Sal',
+  //     description: 'Calcula la cantidad de sal que necesitas para tu piscina de agua salada',
+  //   },
     // Will be refined in the future, not part of MVP.
   // {
   //   icon: IconCurrencyDollar,
   //   title: 'Calculadora de Costo',
   //   description: 'Calcula un precio estimado para tu piscina',
   // },
-];
+// ];
 
 const SocialMediaData = [
   {
