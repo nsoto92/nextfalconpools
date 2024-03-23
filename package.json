@@ -25,6 +25,7 @@
     "@next/bundle-analyzer": "^14.0.1",
     "@tabler/icons-react": "^2.40.0",
     "@types/gapi": "^0.0.47",
+    "@vercel/analytics": "^1.2.2",
     "firebase": "^10.7.1",
     "next": "14.0.1",
     "react": "18.2.0",

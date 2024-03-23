@@ -1,4 +1,5 @@
 import '@mantine/core/styles.css';
+import { Analytics } from '@vercel/analytics/react';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 import { theme } from '../theme';
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: any }) {
             {children}
           </MantineProvider>
         </AuthContextProvider>
+        <Analytics />
       </body>
     </html>
   );
