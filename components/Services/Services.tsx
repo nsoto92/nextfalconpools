@@ -1,7 +1,6 @@
-import Script from 'next/script';
 import { ThemeIcon, Text, Title, Container, SimpleGrid, rem } from '@mantine/core';
 import { Icon3dCubeSphere, IconPool, IconBackhoe, IconBuildingPavilion, IconCooker, IconWavesElectricity } from '@tabler/icons-react';
-import classes from './Services.module.css';
+import styles from './Services.module.css';
 
 export const SERVICEDATA = [
   {
@@ -51,12 +50,14 @@ interface ServiceProps {
 export function Service({ icon: Icon, title, description }: ServiceProps) {
   return (
     <div>
-      <ThemeIcon variant="light" size={40} radius={40}>
-        <Icon style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
-      </ThemeIcon>
-      <Text mt="sm" mb={7}>
-        {title}
-      </Text>
+      <div className={styles.serviceTitle}>
+        <ThemeIcon className={styles.serviceIcon} variant="light" size={40} radius={40}>
+          <Icon style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+        </ThemeIcon>
+        <Text mt="sm" mb={7}>
+          {title}
+        </Text>
+      </div>
       <Text size="sm" c="dimmed" lh={1.6}>
         {description}
       </Text>
@@ -68,18 +69,21 @@ export function Services() {
   const services = SERVICEDATA.map((service, index) => <Service {...service} key={index} />);
 
   return (
-    <Container className={classes.wrapper}>
-      <Title className={classes.title}>Especialistas en piscinas por más de 15 años</Title>
+    <Container className={styles.wrapper}>
+      <Title className={styles.title}>Especialistas en piscinas por más de 15 años</Title>
 
       <Container size={700} p={0}>
-        <Text size="sm" className={classes.description}>
+        <Text size="sm" className={styles.description}>
         Falcón Pools se esfuerza por elevar la experiencia a la que el cliente está acostumbrado,
         para que así los clientes recuerden su experiencia con la compañía por siempre. El
         compromiso con la satisfacción del cliente es de suma importancia para Falcón Pools.
         La compañía trabaja de cerca con sus clientes para asegurarse de que sus expectativas sean
         cumplidas y cree en la importancia de la comunicación efectiva y transparente para que los
         clientes siempre se sientan informados y seguros en el proceso de construcción o
-        remodelación. Nos especializamos en los siguientes servicios:
+        remodelación.
+        </Text>{' '}
+        <Text size="md" className={styles.description} fw={800}>
+          Nos especializamos en los siguientes servicios:
         </Text>
       </Container>
 
@@ -91,8 +95,6 @@ export function Services() {
       >
         {services}
       </SimpleGrid>
-      <iframe title="scheduler" src="https://falconpoolsprhablaclaro.acuityscheduling.com" width="100%" height="800" />
-      <Script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript" />
     </Container>
   );
 }

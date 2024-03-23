@@ -70,6 +70,16 @@
     font-size: rem(22px);
   
     @media (max-width: $mantine-breakpoint-md) {
-      width: 100%;
+      width: 60%;
     }
   }
+
+  .schedulerFrame {
+    border: none;
+  }
+
+  .load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

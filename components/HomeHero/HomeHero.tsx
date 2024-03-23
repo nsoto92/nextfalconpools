@@ -1,7 +1,24 @@
-import { Button, Container, Title, Text } from '@mantine/core';
+'use client';
+
+import React from 'react';
+import Script from 'next/script';
+import { Button, Container, Modal, Title, Text, Loader } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import styles from './HomeHero.module.css';
 
 export function HomeHero() {
+  const [opened, { open, close }] = useDisclosure(false);
+  const [ loaded, setLoaded ] = React.useState(false);
+
+  const onClose = () => {
+    setLoaded(false);
+    close();
+  };
+
+  const onLoaded = () => {
+    setLoaded(true);
+  };
+
   return (
     <div className={styles.root}>
       <Container size="lg">
@@ -36,20 +53,37 @@ export function HomeHero() {
               tu compañía de piscinas de confianza.
             </Text>
             <Button
-              component="a"
+              onClick={open}
               variant="gradient"
               gradient={{ from: 'pink', to: 'orange' }}
               size="md"
               className={styles.control}
               mt={40}
-              href="https://falconpoolsprhablaclaro.as.me/schedule/9586f425"
-              target="_blank"
             >
               Citas Aquí
             </Button>
           </div>
         </div>
       </Container>
+      <Modal opened={opened} onClose={onClose} size="xl">
+        { !loaded && (
+          <div className={styles.load}>
+            <Loader color="orange" />
+          </div>
+        )}
+        <iframe
+          title="scheduler"
+          className={styles.schedulerFrame}
+          src="https://falconpoolsprhablaclaro.acuityscheduling.com"
+          width="100%"
+          height="800"
+          onLoad={onLoaded}
+        />
+        <Script
+          src="https://embed.acuityscheduling.com/js/embed.js"
+          type="text/javascript"
+        />
+      </Modal>
     </div>
   );
 }
