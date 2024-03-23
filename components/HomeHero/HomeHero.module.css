@@ -77,3 +77,9 @@
   .schedulerFrame {
     border: none;
   }
+
+  .load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

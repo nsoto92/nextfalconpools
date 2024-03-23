@@ -1,12 +1,23 @@
 'use client';
 
+import React from 'react';
 import Script from 'next/script';
-import { Button, Container, Modal, Title, Text } from '@mantine/core';
+import { Button, Container, Modal, Title, Text, Loader } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import styles from './HomeHero.module.css';
 
 export function HomeHero() {
   const [opened, { open, close }] = useDisclosure(false);
+  const [ loaded, setLoaded ] = React.useState(false);
+
+  const onClose = () => {
+    setLoaded(false);
+    close();
+  };
+
+  const onLoaded = () => {
+    setLoaded(true);
+  };
 
   return (
     <div className={styles.root}>
@@ -54,13 +65,19 @@ export function HomeHero() {
           </div>
         </div>
       </Container>
-      <Modal opened={opened} onClose={close} size="xl">
+      <Modal opened={opened} onClose={onClose} size="xl">
+        { !loaded && (
+          <div className={styles.load}>
+            <Loader color="orange" />
+          </div>
+        )}
         <iframe
           title="scheduler"
           className={styles.schedulerFrame}
           src="https://falconpoolsprhablaclaro.acuityscheduling.com"
           width="100%"
           height="800"
+          onLoad={onLoaded}
         />
         <Script
           src="https://embed.acuityscheduling.com/js/embed.js"

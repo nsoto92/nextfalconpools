@@ -14,10 +14,10 @@ export function GallonCalculator() {
   const shapes: PoolShapes[] = ['Rectangular', 'Circular', 'Irregular'];
   return (
     <>
+      <div className={styles.selector}>
+        <GradientSegmentedControl data={shapes} />
+      </div>
       <div className={styles.wrapper}>
-        <div className={styles.selector}>
-          <GradientSegmentedControl data={shapes} />
-        </div>
         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
           <div>
             <Title className={styles.title}>Calculadora de Galones</Title>
