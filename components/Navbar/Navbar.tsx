@@ -27,38 +27,32 @@ import {
   IconBrandTwitter,
   IconBrandYoutube,
   IconChevronDown,
-  // IconDroplet,
-  // IconSalt,
+  IconDroplet,
+  IconSalt,
 } from '@tabler/icons-react';
 import styles from './Navbar.module.css';
 import { GallonCalculator } from '../Calculators/GallonCalculator';
 
 export function Navbar() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
-  // const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
+  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const [socialLinksOpened, { toggle: toggleSocialLinks }] = useDisclosure(false);
   const [gallonCalcOpened, { close: closeGallonCalc }] = useDisclosure(false);
   const theme = useMantineTheme();
 
-  // const CalculatorData = [
-  //   {
-  //     icon: IconDroplet,
-  //     title: 'Calculadora de Galones',
-  //     onClick: openGallonCalc,
-  //     description: 'Calcula galones para piscinas rectangulares, circulares e irregulares',
-  //   },
-  //   {
-  //     icon: IconSalt,
-  //     title: 'Calculadora de Sal',
-  //     description: 'Calcula la cantidad de sal que necesitas para tu piscina de agua salada',
-  //   },
-    // Will be refined in the future, not part of MVP.
-  // {
-  //   icon: IconCurrencyDollar,
-  //   title: 'Calculadora de Costo',
-  //   description: 'Calcula un precio estimado para tu piscina',
-  // },
-// ];
+  const CalculatorData = [
+    {
+      icon: IconDroplet,
+      href: '/calculators/gallon',
+      title: 'Calculadora de Galones',
+      description: 'Calcula galones para piscinas rectangulares, circulares e irregulares',
+    },
+    {
+      icon: IconSalt,
+      title: 'Calculadora de Sal',
+      description: 'Calcula la cantidad de sal que necesitas para tu piscina de agua salada',
+    },
+];
 
 const SocialMediaData = [
   {
@@ -88,23 +82,23 @@ const SocialMediaData = [
   },
 ];
 
-  // const links = CalculatorData.map((item) => (
-  //   <UnstyledButton onClick={item.onClick} className={styles.subLink} key={item.title}>
-  //     <Group wrap="nowrap" align="flex-start">
-  //       <ThemeIcon size={34} variant="default" radius="md">
-  //         <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
-  //       </ThemeIcon>
-  //       <div>
-  //         <Text size="sm" fw={500}>
-  //           {item.title}
-  //         </Text>
-  //         <Text size="xs" c="dimmed">
-  //           {item.description}
-  //         </Text>
-  //       </div>
-  //     </Group>
-  //   </UnstyledButton>
-  // ));
+  const links = CalculatorData.map((item) => (
+    <UnstyledButton component="a" href={item.href} className={styles.subLink} key={item.title}>
+      <Group wrap="nowrap" align="flex-start">
+        <ThemeIcon size={34} variant="default" radius="md">
+          <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
+        </ThemeIcon>
+        <div>
+          <Text size="sm" fw={500}>
+            {item.title}
+          </Text>
+          <Text size="xs" c="dimmed">
+            {item.description}
+          </Text>
+        </div>
+      </Group>
+    </UnstyledButton>
+  ));
 
   const socialLinks = SocialMediaData.map((item) => (
     <UnstyledButton
@@ -142,7 +136,7 @@ const SocialMediaData = [
                 Home
               </a>
               {/* After MVP */}
-              {/* <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
+              <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
                 <HoverCard.Target>
                   <a href="#" className={styles.link}>
                     <Center inline>
@@ -168,7 +162,7 @@ const SocialMediaData = [
                     {links}
                   </SimpleGrid>
                 </HoverCard.Dropdown>
-              </HoverCard> */}
+              </HoverCard>
               <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
                 <HoverCard.Target>
                   <a href="#" className={styles.link}>
@@ -217,7 +211,7 @@ const SocialMediaData = [
               Home
             </a>
             {/* After MVP :( */}
-            {/* <UnstyledButton className={styles.link} onClick={toggleLinks}>
+            <UnstyledButton className={styles.link} onClick={toggleLinks}>
               <Center inline>
                 <Box component="span" mr={5}>
                   Calculadoras
@@ -227,8 +221,8 @@ const SocialMediaData = [
                   color={theme.colors.orange[6]}
                 />
               </Center>
-            </UnstyledButton> */}
-            {/* <Collapse in={linksOpened}>{links}</Collapse> */}
+            </UnstyledButton>
+            <Collapse in={linksOpened}>{links}</Collapse>
             <UnstyledButton className={styles.link} onClick={toggleSocialLinks}>
               <Center inline>
                 <Box component="span" mr={5}>
