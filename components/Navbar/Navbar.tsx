@@ -17,7 +17,6 @@ import {
   rem,
   useMantineTheme,
   Image,
-  Modal,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -31,13 +30,11 @@ import {
   IconSalt,
 } from '@tabler/icons-react';
 import styles from './Navbar.module.css';
-import { GallonCalculator } from '../Calculators/GallonCalculator';
 
 export function Navbar() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
   const [socialLinksOpened, { toggle: toggleSocialLinks }] = useDisclosure(false);
-  const [gallonCalcOpened, { close: closeGallonCalc }] = useDisclosure(false);
   const theme = useMantineTheme();
 
   const CalculatorData = [
@@ -197,7 +194,7 @@ const SocialMediaData = [
         </header>
 
         <Drawer
-          opened={drawerOpened && !gallonCalcOpened}
+          opened={drawerOpened}
           onClose={closeDrawer}
           size="100%"
           padding="md"
@@ -238,15 +235,6 @@ const SocialMediaData = [
           </ScrollArea>
         </Drawer>
       </Box>
-      <Modal
-        title="Escoge el tipo de piscina para calcular los galones:"
-        opened={gallonCalcOpened}
-        onClose={closeGallonCalc}
-        classNames={{ title: styles.modalTitle }}
-        size="xl"
-      >
-       <GallonCalculator />
-      </Modal>
     </>
   );
 }
