@@ -82,7 +82,7 @@ const SocialMediaData = [
   const links = CalculatorData.map((item) => (
     <UnstyledButton component="a" href={item.href} className={styles.subLink} key={item.title}>
       <Group wrap="nowrap" align="flex-start">
-        <ThemeIcon size={34} variant="default" radius="md">
+        <ThemeIcon size={34} variant="default" radius="md" classNames={{ root: styles.menuIcon }}>
           <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
         </ThemeIcon>
         <div>
@@ -106,7 +106,7 @@ const SocialMediaData = [
       key={item.title}
     >
       <Group wrap="nowrap" align="flex-start">
-        <ThemeIcon size={34} variant="default" radius="md">
+        <ThemeIcon size={34} variant="default" radius="md" classNames={{ root: styles.menuIcon }}>
             <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
         </ThemeIcon>
         <div>
@@ -123,11 +123,13 @@ const SocialMediaData = [
       <Box>
         <header className={styles.header}>
           <Group justify="space-between" h="100%">
-            <Image
-              h={55}
-              src="/fpLogo.svg"
-              alt="Falcon Pools Nav Logo"
-            />
+            <a href="/">
+              <Image
+                h={55}
+                src="/fpLogo.svg"
+                alt="Falcon Pools Nav Logo"
+              />
+            </a>
             <Group h="100%" gap={0} visibleFrom="sm">
               <a href="/" className={styles.link}>
                 Home

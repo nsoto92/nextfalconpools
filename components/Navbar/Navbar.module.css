@@ -50,3 +50,7 @@
   text-align: center;
   width: 100%;
  }
+
+ .menuIcon	{
+  margin-left: var(--mantine-spacing-xs);
+ }

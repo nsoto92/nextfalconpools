@@ -8,7 +8,7 @@ import styles from './HomeHero.module.css';
 
 export function HomeHero() {
   const [opened, { open, close }] = useDisclosure(false);
-  const [ loaded, setLoaded ] = React.useState(false);
+  const [loaded, setLoaded] = React.useState(false);
 
   const onClose = () => {
     setLoaded(false);
