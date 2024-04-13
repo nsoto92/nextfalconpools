@@ -60,22 +60,22 @@ const SocialMediaData = [
   {
     icon: IconBrandTiktok,
     title: 'Tik Tok',
-    onClick: '"https://facebook.com/falconpoolspr"',
+    onClick: 'https://www.tiktok.com/@falconpoolspr',
   },
   {
     icon: IconBrandInstagram,
     title: 'Instagram',
-    onClick: '"https://facebook.com/falconpoolspr"',
+    onClick: 'https://www.instagram.com/falconpoolspr',
   },
   {
     icon: IconBrandYoutube,
     title: 'YouTube',
-    onClick: '"https://facebook.com/falconpoolspr"',
+    onClick: 'https://www.youtube.com/@falconpoolspr',
   },
   {
     icon: IconBrandTwitter,
     title: 'Twitter',
-    onClick: '"https://facebook.com/falconpoolspr"',
+    onClick: 'https://twitter.com/falconpoolspr?lang=en',
   },
 ];
 
