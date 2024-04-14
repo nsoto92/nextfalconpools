@@ -33,6 +33,7 @@ export function RectangularCalculator() {
           <Image
             radius="md"
             src="/RectanglePool.png"
+            height={150}
           />
           <Paper className={styles.volumeWrapper} radius="md" shadow="none" p="xs">
             <IconDroplet
