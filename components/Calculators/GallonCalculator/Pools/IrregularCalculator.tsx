@@ -35,6 +35,7 @@ export function IrregularCalculator() {
           <Image
             radius="md"
             src="/IrregularPool.png"
+            height={130}
           />
           <Paper className={styles.volumeWrapper} radius="md" shadow="none" p="xs">
             <IconDroplet

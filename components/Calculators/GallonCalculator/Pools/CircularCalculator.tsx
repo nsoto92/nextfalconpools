@@ -31,6 +31,7 @@ export function CircularCalculator() {
           <Image
             radius="md"
             src="/CirclePool.png"
+            height={155}
           />
           <Paper className={styles.volumeWrapper} radius="md" shadow="none" p="xs">
             <IconDroplet
