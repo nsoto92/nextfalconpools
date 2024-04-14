@@ -204,7 +204,7 @@ const SocialMediaData = [
         >
           <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
             <Divider my="sm" />
-            <a href="#" className={styles.link}>
+            <a href="/" className={styles.link}>
               Home
             </a>
             {/* After MVP :( */}
