@@ -3,24 +3,26 @@ import { Button, Group, Image, NumberInput, Paper, rem, SimpleGrid, Text } from 
 import { IconDroplet } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import styles from './Pools.module.css';
-import { calculateRectangularGallons } from '@/utils/Calculators';
+import { calculateIrregularGallons } from '@/utils/Calculators';
 
-export function RectangularCalculator() {
+export function IrregularCalculator() {
   const [gallons, setGallons] = useState<Number>(0);
   const form = useForm({
     initialValues: {
       depth1: 0,
       depth2: 0,
       length: 0,
-      width: 0,
+      smallDiameter: 0,
+      largeDiameter: 0,
     },
   });
 
   const handleSubmit = () => {
-    const totalGallons = calculateRectangularGallons(
+    const totalGallons = calculateIrregularGallons(
       form.values.depth1,
       form.values.length,
-      form.values.width,
+      form.values.largeDiameter,
+      form.values.smallDiameter,
       form.values.depth2,
     );
     setGallons(totalGallons);
@@ -32,7 +34,7 @@ export function RectangularCalculator() {
         <div>
           <Image
             radius="md"
-            src="/RectanglePool.png"
+            src="/IrregularPool.png"
           />
           <Paper className={styles.volumeWrapper} radius="md" shadow="none" p="xs">
             <IconDroplet
@@ -66,18 +68,25 @@ export function RectangularCalculator() {
             {...form.getInputProps('depth2')}
           />
           <NumberInput
-            label="Largo (A)"
+            label="Diámetro Grande (A)"
+            hideControls
+            rightSection="ft"
+            rightSectionPointerEvents="none"
+            {...form.getInputProps('largeDiameter')}
+          />
+          <NumberInput
+            label="Diámetro Pequeño (B)"
+            hideControls
+            rightSection="ft"
+            rightSectionPointerEvents="none"
+            {...form.getInputProps('smallDiameter')}
+          />
+          <NumberInput
+            label="Largo (C)"
             hideControls
             rightSection="ft"
             rightSectionPointerEvents="none"
             {...form.getInputProps('length')}
-          />
-          <NumberInput
-            label="Ancho (B)"
-            hideControls
-            rightSection="ft"
-            rightSectionPointerEvents="none"
-            {...form.getInputProps('width')}
           />
           </SimpleGrid>
           <Group justify="flex-end" mt="xl">

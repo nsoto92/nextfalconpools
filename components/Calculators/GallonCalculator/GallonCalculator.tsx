@@ -4,6 +4,8 @@ import { Card, Container, rem, Tabs, Text, Title } from '@mantine/core';
 import { IconRectangle, IconBrandPeanut, IconCircle } from '@tabler/icons-react';
 import styles from './GallonCalculator.module.css';
 import { RectangularCalculator } from './Pools/RectangularCalculator';
+import { CircularCalculator } from './Pools/CircularCalculator';
+import { IrregularCalculator } from './Pools/IrregularCalculator';
 
 export function GallonCalculator() {
   const iconStyle = { width: rem(12), height: rem(12) };
@@ -54,10 +56,10 @@ export function GallonCalculator() {
               <RectangularCalculator />
             </Tabs.Panel>
             <Tabs.Panel value="second">
-              Piscina Irregular
+              <IrregularCalculator />
             </Tabs.Panel>
             <Tabs.Panel value="third">
-              Piscina Circular
+              <CircularCalculator />
             </Tabs.Panel>
           </Tabs>
         </Card>

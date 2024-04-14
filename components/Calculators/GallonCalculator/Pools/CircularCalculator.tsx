@@ -3,24 +3,22 @@ import { Button, Group, Image, NumberInput, Paper, rem, SimpleGrid, Text } from 
 import { IconDroplet } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import styles from './Pools.module.css';
-import { calculateRectangularGallons } from '@/utils/Calculators';
+import { calculateCircularGallons } from '@/utils/Calculators';
 
-export function RectangularCalculator() {
+export function CircularCalculator() {
   const [gallons, setGallons] = useState<Number>(0);
   const form = useForm({
     initialValues: {
       depth1: 0,
       depth2: 0,
-      length: 0,
-      width: 0,
+      radio: 0,
     },
   });
 
   const handleSubmit = () => {
-    const totalGallons = calculateRectangularGallons(
+    const totalGallons = calculateCircularGallons(
       form.values.depth1,
-      form.values.length,
-      form.values.width,
+      form.values.radio,
       form.values.depth2,
     );
     setGallons(totalGallons);
@@ -32,7 +30,7 @@ export function RectangularCalculator() {
         <div>
           <Image
             radius="md"
-            src="/RectanglePool.png"
+            src="/CirclePool.png"
           />
           <Paper className={styles.volumeWrapper} radius="md" shadow="none" p="xs">
             <IconDroplet
@@ -66,18 +64,11 @@ export function RectangularCalculator() {
             {...form.getInputProps('depth2')}
           />
           <NumberInput
-            label="Largo (A)"
+            label="Radio (R)"
             hideControls
             rightSection="ft"
             rightSectionPointerEvents="none"
-            {...form.getInputProps('length')}
-          />
-          <NumberInput
-            label="Ancho (B)"
-            hideControls
-            rightSection="ft"
-            rightSectionPointerEvents="none"
-            {...form.getInputProps('width')}
+            {...form.getInputProps('radio')}
           />
           </SimpleGrid>
           <Group justify="flex-end" mt="xl">
