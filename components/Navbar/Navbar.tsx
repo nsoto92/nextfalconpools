@@ -17,7 +17,6 @@ import {
   rem,
   useMantineTheme,
   Image,
-  Anchor,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -124,13 +123,11 @@ const SocialMediaData = [
       <Box>
         <header className={styles.header}>
           <Group justify="space-between" h="100%">
-            <Anchor href="/">
-              <Image
-                h={55}
-                src="/fpLogo.svg"
-                alt="Falcon Pools Nav Logo"
-              />
-            </Anchor>
+            <Image
+              h={55}
+              src="/fpLogo.svg"
+              alt="Falcon Pools Nav Logo"
+            />
             <Group h="100%" gap={0} visibleFrom="sm">
               <a href="/" className={styles.link}>
                 Home
