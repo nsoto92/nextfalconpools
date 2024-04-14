@@ -1,0 +1,97 @@
+import { useState } from 'react';
+import { Button, Group, Image, NumberInput, Paper, rem, SimpleGrid, Text } from '@mantine/core';
+import { IconDroplet } from '@tabler/icons-react';
+import { useForm } from '@mantine/form';
+import styles from './Pools.module.css';
+import { calculateRectangularGallons } from '@/utils/Calculators';
+
+export function RectangularCalculator() {
+  const [gallons, setGallons] = useState<Number | undefined>(); // [1
+  const form = useForm({
+    initialValues: {
+      depth1: 0,
+      depth2: 0,
+      length: 0,
+      width: 0,
+    },
+  });
+
+  const handleSubmit = () => {
+    const totalGallons = calculateRectangularGallons(
+      form.values.depth1,
+      form.values.length,
+      form.values.width,
+      form.values.depth2,
+    );
+    setGallons(totalGallons);
+  };
+
+  return (
+    <div className={styles.wrapper}>
+      <SimpleGrid cols={2}>
+        <div>
+          <Image
+            radius="md"
+            src="/RectanglePool.png"
+          />
+          <Paper className={styles.volumeWrapper} radius="md" shadow="none" p="xs">
+            <IconDroplet
+              style={{ width: rem(32), height: rem(32) }}
+              className={styles.icon}
+              stroke={1.5}
+            />
+            <div>
+              <Text className={styles.label}>Volumen Estimado</Text>
+              <Text fz="xs" className={styles.count}>
+                <span className={styles.value}> {`${gallons} galones`}</span>
+              </Text>
+            </div>
+          </Paper>
+        </div>
+        <div>
+          <form onSubmit={form.onSubmit(handleSubmit)}>
+          <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
+          <NumberInput
+            label="Lado Llano"
+            placeholder="Profundidad"
+            hideControls
+            rightSection="ft"
+            rightSectionPointerEvents="none"
+            {...form.getInputProps('depth1')}
+          />
+          <NumberInput
+            label="Lado Hondo"
+            placeholder="Profundidad"
+            hideControls
+            rightSection="ft"
+            rightSectionPointerEvents="none"
+            {...form.getInputProps('depth2')}
+          />
+          <NumberInput
+            label="Largo"
+            placeholder="Largo"
+            hideControls
+            rightSection="ft"
+            rightSectionPointerEvents="none"
+            {...form.getInputProps('length')}
+          />
+          <NumberInput
+            label="Ancho"
+            placeholder="Ancho"
+            hideControls
+            rightSection="ft"
+            rightSectionPointerEvents="none"
+            {...form.getInputProps('width')}
+          />
+          </SimpleGrid>
+          <Group justify="flex-end" mt="xl">
+            <Button color="orange" type="submit" size="sm">
+              Calcular
+            </Button>
+          </Group>
+          </form>
+        </div>
+      </SimpleGrid>
+    </div>
+  );
+}

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Page from '@/components/Page/Page';
-import { GallonCalculator } from '@/components/PoolShapeSelector/GallonCalculator';
+import { GallonCalculator } from '@/components/Calculators/GallonCalculator/GallonCalculator';
 
 export const metadata: Metadata = {
   title: 'Calculadora de Galones',

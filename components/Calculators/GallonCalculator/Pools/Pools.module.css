@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--mantine-spacing-xl);
+}
+
+.volumeWrapper {
+  width: fit-content;
+  margin: auto;
+  padding-top: var(--mantine-spacing-xl);
+  min-height: rem(140px);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  row-gap: var(--mantine-spacing-xs);
+}
+
+.icon {
+  color: var(--mantine-color-blue-6);
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--mantine-font-size-xs);
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+  color: var(--mantine-color-gray-6);
+  line-height: 1.2;
+}
+
+.value {
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 700;
+  color: var(--mantine-color-black);
+}
