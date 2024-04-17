@@ -2,7 +2,7 @@
 
 import { Card, Container, rem, Tabs, Text, Title } from '@mantine/core';
 import { IconRectangle, IconBrandPeanut, IconCircle } from '@tabler/icons-react';
-import styles from './GallonCalculator.module.css';
+import styles from '../Calculator.module.css';
 import { RectangularCalculator } from './Pools/RectangularCalculator';
 import { CircularCalculator } from './Pools/CircularCalculator';
 import { IrregularCalculator } from './Pools/IrregularCalculator';
@@ -11,7 +11,7 @@ export function GallonCalculator() {
   const iconStyle = { width: rem(12), height: rem(12) };
 
   return (
-    <div className={styles.root}>
+    <div className={styles.rootGallon}>
       <Container className={styles.wrapper}>
         <Title className={styles.title}>Calculadora de Galones</Title>
         <Container size={900} p={0}>
