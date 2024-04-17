@@ -27,7 +27,7 @@ import {
   IconBrandYoutube,
   IconChevronDown,
   IconDroplet,
-  // IconSalt,
+  IconSalt,
 } from '@tabler/icons-react';
 import styles from './Navbar.module.css';
 
@@ -44,11 +44,12 @@ export function Navbar() {
       title: 'Calculadora de Galones',
       description: 'Calcula galones para piscinas rectangulares, circulares e irregulares',
     },
-    // {
-    //   icon: IconSalt,
-    //   title: 'Calculadora de Sal',
-    //   description: 'Calcula la cantidad de sal que necesitas para tu piscina de agua salada',
-    // },
+    {
+      icon: IconSalt,
+      href: '/calculators/salt',
+      title: 'Calculadora de Salinidad',
+      description: 'Calcula la cantidad de sal que necesitas para tu piscina de agua salada',
+    },
 ];
 
 const SocialMediaData = [

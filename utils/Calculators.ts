@@ -38,3 +38,8 @@ export const calculateIrregularGallons = (
   );
   return Math.floor(cubicVolume * 7.5);
 };
+
+export const calculateSaltDemand = (
+  poolVolume: number,
+  saltLevel: number,
+): number => Math.floor((poolVolume * 8.35 * (0.0032 - (saltLevel / 1000000))));
