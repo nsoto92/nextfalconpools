@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Container, Title, Text, Card, Slider, rem, Grid, Paper } from '@mantine/core';
 import { IconGripVertical, IconSalt } from '@tabler/icons-react';
-import { calculateSaltDemand } from '@/utils/Calculators';
+import { calculateSaltDemand } from '@/utils/calculators';
 import styles from '../Calculator.module.css';
 
 export function SaltCalculator() {
@@ -96,7 +96,7 @@ export function SaltCalculator() {
                   className={styles.icon}
                   stroke={1.5}
                 />
-                <Text className={styles.label}>Demanda Actual de Salitre: </Text>
+                <Text className={styles.label}>Demanda Actual de Sal: </Text>
                 <Text size="xl" fw={700}>{requiredSalt} </Text>
                 <Text fz="xs" className={styles.count}>LBS</Text>
               </Paper>

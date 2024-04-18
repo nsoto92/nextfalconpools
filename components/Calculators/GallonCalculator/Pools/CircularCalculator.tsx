@@ -3,7 +3,7 @@ import { Button, Group, Image, NumberInput, Paper, rem, SimpleGrid, Text } from 
 import { IconDroplet } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import styles from './Pools.module.css';
-import { calculateCircularGallons } from '@/utils/Calculators';
+import { calculateCircularGallons } from '@/utils/calculators';
 
 export function CircularCalculator() {
   const [gallons, setGallons] = useState<Number>(0);
