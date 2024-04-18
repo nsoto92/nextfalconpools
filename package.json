@@ -23,6 +23,7 @@
     "@mantine/form": "^7.4.0",
     "@mantine/hooks": "7.3.2",
     "@next/bundle-analyzer": "^14.0.1",
+    "@stripe/stripe-js": "^3.3.0",
     "@tabler/icons-react": "^2.40.0",
     "@types/gapi": "^0.0.47",
     "@vercel/analytics": "^1.2.2",

@@ -96,7 +96,7 @@ export function SaltCalculator() {
                   className={styles.icon}
                   stroke={1.5}
                 />
-                <Text className={styles.label}>Demanda Actual de Salitre: </Text>
+                <Text className={styles.label}>Demanda Actual de Sal: </Text>
                 <Text size="xl" fw={700}>{requiredSalt} </Text>
                 <Text fz="xs" className={styles.count}>LBS</Text>
               </Paper>
