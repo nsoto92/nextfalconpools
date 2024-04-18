@@ -3,7 +3,7 @@ import { Button, Group, Image, NumberInput, Paper, rem, SimpleGrid, Text } from 
 import { IconDroplet } from '@tabler/icons-react';
 import { useForm } from '@mantine/form';
 import styles from './Pools.module.css';
-import { calculateRectangularGallons } from '@/utils/calculators';
+import { calculateRectangularGallons } from '@/utils/Calculators';
 
 export function RectangularCalculator() {
   const [gallons, setGallons] = useState<Number>(0);

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Container, Title, Text, Card, Slider, rem, Grid, Paper } from '@mantine/core';
 import { IconGripVertical, IconSalt } from '@tabler/icons-react';
-import { calculateSaltDemand } from '@/utils/calculators';
+import { calculateSaltDemand } from '@/utils/Calculators';
 import styles from '../Calculator.module.css';
 
 export function SaltCalculator() {
